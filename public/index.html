@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Dashboard</title>
+
+
+</head>
+
+<body class="body box-border font-iransans ">
+  <div class="flex items-center justify-center pt-12 pb-8 px-12">
+    <main class="w-full rounded-2xl bg-slate-100 px-4 relative">
+      <div class="navbar pt-4 ">
+        <div class="ml-28">
+          <button class="btn btn-square btn-ghost">
+            <img src="./images/menualt.png" alt="menuicon">
+          </button>
+        </div>
+        <div class="flex-auto">
+          <ul class="flex gap-x-10">
+            <li><a href="#" class="no-underline">خانه</a></li>
+            <li><a href="#">پشتیبانی</a></li>
+            <li><a href="#">حساب کاربری</a></li>
+          </ul>
+        </div>
+        <div class="ml-10">
+          <a class="">
+            <img src="./images/لوکو.png" alt="">
+          </a>
+        </div>
+      </div>
+      <section class="flex items-center gap-8  mb-8 px-6 ">
+        <div class="flex flex-col justify-start w-1/3 py-8 gap-8 shadow-2xl rounded-2xl">
+          <div class="flex justify-between items-center px-6">
+            <span class="text-4xl font-bold ">پیام جدید</span>
+            <img src="./images/Chat.png" alt="" class="w-[7%] h-[7%]">
+          </div>
+          <span class="px-6 maincolor text-6xl">۵۰</span>
+          <span class="h-[1px] bg-slate-400 "></span>
+          <div class="flex flex-col gap-4 px-6">
+            <div>
+              <div class="flex w-full items-center mb-2 ">
+                <p class="text-slate-500 text-lg inline-block text">درصد نظرسنجی</p>
+                <div
+                  class=" py-0.5 mr-[calc(75%-140px)] px-1.5 bg-blue-50 border border-blue-200 text-sm font-medium maincolor rounded-lg ">
+                  ۷۵%</div>
+              </div>
+              <div class="flex w-full h-4 bg-slate-400 rounded-full">
+                <div class="flex flex-col justify-center rounded-full mainbg w-[75%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-start w-1/3 py-8 gap-8 shadow-2xl rounded-2xl">
+          <div class="flex justify-between items-center px-6">
+            <span class="text-4xl font-bold ">اهداف</span>
+            <img src="./images/Chartpie.png" alt="" class="w-[7%] h-[7%]">
+          </div>
+          <div class="flex gap-4">
+            <div class="flex flex-col justify-between  gap-4">
+              <span class="px-6 maincolor text-6xl">۲۱</span>
+              <span class="text-base py-10 text-slate-500 px-6">۶۲ درصد اهداف روزانه</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="relative size-40">
+                <svg class="size-full" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="18" cy="18" r="16" fill="none" class="stroke-current maincolor " stroke-width="2">
+                  </circle>
+                  </circle>
+                  <g class="origin-center -rotate-90 transform">
+                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-current outcircle" stroke-width="2"
+                      stroke-dasharray="100" stroke-dashoffset="62"></circle>
+                  </g>
+                </svg>
+                <!-- Percentage Text -->
+                <div class="absolute top-1/2 left-[50%]  -translate-y-1/2 -translate-x-1/2">
+                  <span class="text-center text-2xl font-bold  text-slate-500">۶۲%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-start w-1/3 py-8 gap-8 shadow-2xl rounded-2xl">
+          <div class="flex justify-between items-center px-6">
+            <span class="text-4xl font-bold ">اعتبار</span>
+            <img src="./images/Bank.png" alt="" class="w-[7%] h-[7%]">
+          </div>
+          <div id="chart" class=""></div>
+          <!-- Legend Indicator -->
+
+        </div>
+      </section>
+      <footer class="flex flex-col px-12 py-4">
+        <span class="text-4xl font-bold">نرخ فروش</span>
+        <div class="h-[20rem]  flex items-center justify-center">
+          <canvas  id="myChart" class=""></canvas>
+        </div>
+      </footer>
+      <aside class=" fixed left-0 top-[50%] translate-y-[-70%] translate-x-[40%]  ">
+        <ul class="p-3 gap-6 rounded-full mainbg flex flex-col items-center justify-center shadow-2xl ">
+          <li ><a href="#" class=""><img src="./images/Hotspot1.png" alt="" class="w-7 hover:iconbg   mt-4 hover:rounded-full"></a></li>
+          <li><a href="#"><img src="./images/Icon2.png" alt="" class="w-7 hover:iconbg hover:rounded-full"></a></li>
+          <li><a href="#"><img src="./images/Invoice3.png" alt="" class="w-7 hover:iconbg hover:rounded-full"></a></li>
+          <li><a href="#"><img src="./images/Layout4.png" alt="" class="w-7 hover:iconbg hover:rounded-full"></a></li>
+          <li><a href="#"><img src="./images/Locationquestion5.png" alt="" class="w-7 hover:iconbg mb-4 hover:rounded-full"></a></li>
+        </ul>
+      </aside>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script>
+
+    var options = {
+      series: [{
+        name: '',
+        data: [1, 16, 39, 5, 18]
+      }],
+      colors: ['#602BF8',],
+      chart: {
+        toolbar: {
+          show: false,
+        },
+        height: 170,
+        type: 'area',
+
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: 'smooth'
+      },
+      xaxis: {
+        categories: ["شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهارشنبه",],
+
+      },
+      yaxis: {
+        max: 40,
+        tickAmount: 2,
+        labels: {
+          align: 'center',
+        },
+      }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['فروردین ', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد',],
+        datasets: [{
+          label:'',
+          data: [77, 25, 49, 44, 30],
+          borderWidth: 1,
+          backgroundColor : "#602BF8",
+          borderColor : "#602BF8",
+          borderWidth :3,
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            display:true,
+            ticks:{
+               stepSize: 25
+            },
+            max:100,
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+@font-face {
+    font-family: iransans;
+    src: url(../public/font/IRANRegular.ttf);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities{
+    .body {
+        background-color: #5CD8FF;
+    }
+    .iconbg{
+        background-color: #390DB5;
+        color:#fff;
+        scale: 1.25;
+        
+    }
+   
+    .maincolor{
+        color: #602BF8;
+    }
+    .mainbg {
+        background-color: #602BF8;
+    }
+    .outcircle{
+        color: #C3AEFC;
+    }
+}

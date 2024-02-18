@@ -1,0 +1,20 @@
+{
+  "name": "dashtail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "tailwindcss build src/style.css -o public/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apexcharts": "^3.46.0",
+    "chart.js": "^4.4.1",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "daisyui": "^4.7.0"
+  }
+}
